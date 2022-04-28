@@ -14,6 +14,7 @@ body {
 
 form {
   display: flex;
+  align-items: center;
 }
 
 .title {
@@ -98,14 +99,24 @@ form {
   outline: none;
   transition: border-bottom 100ms ease-in;
   order: 2;
+  line-height: 2;
 }
 
 .new:focus {
-  border-bottom-width: 3px;
+  border-bottom-width: 4px;
+}
+
+.new::placeholder {
+  color: var(--white);
+  opacity: .75;
+}
+
+.first.new.list::placeholder {
+  color: inherit;
 }
 
 .new:focus::placeholder {
-  opacity: .5;
+  opacity: .4;
   transition: 200ms;
 }
 
@@ -118,6 +129,10 @@ form {
 
 .active-list {
   font-weight: 700;
+}
+
+.active-list:hover {
+  opacity: 1;
 }
 
 .todo-list {
