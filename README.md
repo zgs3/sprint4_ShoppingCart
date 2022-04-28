@@ -25,6 +25,7 @@
 
 ### Next options:
 
+* You can edit list items by double clicking on the name of the item. 
 * You can select and mark items / tasks as "checked" by pressing on them.
 * Below the item list you can press "Clear completed tasks" and "checked" items will be deleted.
 * Below the item list you can press "Delete list" and the list which is selected at the moment will be deleted.
