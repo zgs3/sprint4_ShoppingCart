@@ -14,6 +14,14 @@ const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
+
+// edit function after double clicking the item
+tasksContainer.addEventListener('dblclick', e => {
+  const newValue = prompt('Enter updated item:')
+  if (newValue == null || newValue === '') return 
+  e.target.innerHTML = '<span class="custom-checkbox"></span>' + newValue
+})
+
 // local storage key's
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
