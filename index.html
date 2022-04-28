@@ -4,11 +4,86 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shopping Cart 3000</title>
+  <title>The List +</title>
   <link rel="stylesheet" href="./style/style.css">
   <script src="https://kit.fontawesome.com/8cc9ee3dc9.js" crossorigin="anonymous"></script>
 </head>
 <body>
+  <h1 class="title">The List <i class="fa-solid fa-circle-plus"></i></h1>
+
+  <div class="itemsAll">
+
+  </div>
+
+  <div class="all-tasks">
+    <div class="task-list-header">
+      <h2 class="task-list-title">My lists</h2>
+    </div>
+    <ul class="task-list">
+      <li class="list-name active-list">Shopping</li>
+      <li class="list-name">Work</li>
+      <li class="list-name">Other</li>
+    </ul>
+
+    <form action="">
+      <input type="text" class="new list" placeholder="new list" aria-label="new list name">
+      <button class="btn create" aria-label="create new list">+</button>
+    </form>
+  </div>
+
+  <div class="todo-list">
+    <div class="todo-header">
+      <h2 class="list-title">Shopping</h2>
+      <p class="task-count">3 tasks remaining</p>
+    </div>
+
+    <div class="todo-body">
+      <!-- task 1 -->
+      <div class="tasks"> 
+        <div class="task">
+          <input type="checkbox" id="task-1">
+          <label for="task-1">
+            <span class="custom-checkbox"></span>
+            Batonas
+          </label>
+        </div>
+      </div>
+      <!-- task 2 -->
+      <div class="tasks"> 
+        <div class="task">
+          <input type="checkbox" id="task-2">
+          <label for="task-2">
+            <span class="custom-checkbox"></span>
+            Pienas
+          </label>
+        </div>
+      </div>
+      <!-- task 3 -->
+      <div class="tasks"> 
+        <div class="task">
+          <input type="checkbox" id="task-3">
+          <label for="task-3">
+            <span class="custom-checkbox"></span>
+            Silke
+          </label>
+        </div>
+      </div>
+
+
+      <div class="new-task-creator">
+        <form action="">
+          <input type="text" class="new list" placeholder="new task or item" aria-label="new task name">
+          <button class="btn create" aria-label="create new task">+</button>
+        </form>
+      </div>
+
+      <div class="delete-stuff">
+        <button class="btn delete">Clear completed tasks</button>
+        <button class="btn delete">Delete list</button>
+      </div>
+    </div>
+  </div>
+
   <script src="./script.js"></script>
 </body>
 </html>
