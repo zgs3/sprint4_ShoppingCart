@@ -1,6 +1,7 @@
 const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form')
 const newListInput = document.querySelector('[data-new-list-input')
+
 const deleteListButton = document.querySelector('[data-delete-list-button]')
 
 const listDisplayContainer = document.querySelector('[data-list-display-container]')
@@ -11,6 +12,7 @@ const taskTemplate = document.getElementById('task-template')
 
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
+const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
 
 // local storage key's
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
@@ -21,6 +23,12 @@ let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 // getting selected item ID from LS
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
+// function for clearing all "checked" items
+clearCompleteTasksButton.addEventListener('click', e => {
+  const selectedList = lists.find(list => list.id === selectedListId)
+  selectedList.tasks = selectedList.tasks.filter(task => !task.complete)
+  saveAndRender()
+})
 
 deleteListButton.addEventListener('click', e => {
   lists = lists.filter(list => list.id !== selectedListId)
