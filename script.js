@@ -35,6 +35,17 @@ listsContainer.addEventListener('click', e => {
   }
 })
 
+// function counting "checked" items and saving theyr id for local storage
+tasksContainer.addEventListener('click', e => {
+  if (e.target.tagName.toLowerCase() === 'input') {
+    const selectedList = lists.find(list => list.id === selectedListId)
+    const selectedTask = selectedList.tasks.find(task => task.id === e.target.id)
+    selectedTask.complete = e.target.checked
+    save()
+    renderTaskCount(selectedList)
+  }
+})
+
 //function creating new list element
 newListForm.addEventListener('submit', e => {
   e.preventDefault()
@@ -60,16 +71,11 @@ newTaskForm.addEventListener('submit', e => {
 
 // function for creating a list item and returning unique id for the item as a date
 function createList(name) {
-  return { id: Date.now().toString(), name: name, tasks: [{
-    id: '1',
-    name: 'someName',
-    complete: false
-  }]}
+  return { id: Date.now().toString(), name: name, tasks: [] }
 }
 
 function createTask(name) {
-  return { id: Date.now().toString(), name: name, complete: false
-  }
+  return { id: Date.now().toString(), name: name, complete: false }
 }
 
 function saveAndRender() {
