@@ -7,6 +7,7 @@
   <title>The List +</title>
   <link rel="stylesheet" href="./style/style.css">
   <script src="https://kit.fontawesome.com/8cc9ee3dc9.js" crossorigin="anonymous"></script>
+  <script defer src="./script.js"></script>
 </head>
 <body>
   <h1 class="title">The List <i class="fa-solid fa-circle-plus"></i></h1>
@@ -19,14 +20,14 @@
     <div class="task-list-header">
       <h2 class="task-list-title">My lists</h2>
     </div>
-    <ul class="task-list">
-      <li class="list-name active-list">Shopping</li>
+    <ul class="task-list" data-lists>
+      <!-- <li class="list-name active-list">Shopping</li>
       <li class="list-name">Work</li>
-      <li class="list-name">Other</li>
+      <li class="list-name">Other</li> -->
     </ul>
 
-    <form action="">
-      <input type="text" class="new list" placeholder="new list" aria-label="new list name">
+    <form action="" data-new-list-form>
+      <input type="text" class="new list" data-new-list-input placeholder="new list" aria-label="new list name">
       <button class="btn create" aria-label="create new list">+</button>
     </form>
   </div>
@@ -83,7 +84,5 @@
       </div>
     </div>
   </div>
-
-  <script src="./script.js"></script>
 </body>
 </html>

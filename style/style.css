@@ -27,6 +27,7 @@ form {
 .task-list-header {
   font-size: 2rem;
   padding-bottom: .5rem;
+  margin-bottom: 2rem;
   border-bottom: 2px solid var(--yellowTransparent);
 }
 
