@@ -1,8 +1,5 @@
 :root {
-  --orange2: #DC2F02;
   --orange1: #df5917;
-  --gray: #c8c8c8;
-  
   --white: #FFFFFF;
   --yellow2: #F48C06;
   --yellow1: #FAA307;
@@ -22,5 +19,4 @@
 
 html {
   font-size: 62.5%;
-  /* height: 100%; */
   }

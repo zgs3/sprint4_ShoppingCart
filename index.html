@@ -4,7 +4,17 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The List +</title>
+  <meta name="description" content="Online list app for making and saving your shopping and todo's lists">
+  <meta property="og:title" content="The List+">
+  <meta property="og:type" content="Online list app for making and saving your shopping and todo's lists">
+  <meta property="og:image" content="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219__480.png">
+  <meta property="og:url" content="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219__480.png">
+  <meta property="og:description" content="Online list app for making and saving your shopping and todo's lists">
+  <meta property="twitter:title" content="The List+">
+  <meta property="twitter:type" content="Online list app for making and saving your shopping and todo's lists">
+  <meta property="twitter:image" content="https://cdn.pixabay.com/photo/2017/06/10/07/18/list-2389219__480.png">
+  <meta property="twitter:description" content="Online list app for making and saving your shopping and todo's lists">
+  <title>The List+</title>
   <link rel="stylesheet" href="./style/style.css">
   <script src="https://kit.fontawesome.com/8cc9ee3dc9.js" crossorigin="anonymous"></script>
   <script defer src="./script.js"></script>
@@ -12,16 +22,11 @@
 <body>
   <h1 class="title">The List <i class="fa-solid fa-circle-plus"></i></h1>
 
-  <div class="itemsAll">
-
-  </div>
-
   <div class="all-tasks">
     <div class="task-list-header">
       <h2 class="task-list-title">My lists</h2>
     </div>
-    <ul class="task-list" data-lists>
-    </ul>
+    <ul class="task-list" data-lists></ul>
 
     <form action="" data-new-list-form>
       <input type="text" class="new list first" data-new-list-input placeholder="new list" aria-label="new list name">
@@ -31,37 +36,12 @@
 
   <div class="todo-list" data-list-display-container>
     <div class="todo-header">
-      <h2 class="list-title" data-list-title>Shopping</h2>
-      <p class="task-count" data-list-count>3 tasks remaining</p>
+      <h2 class="list-title" data-list-title></h2>
+      <p class="task-count" data-list-count></p>
     </div>
 
     <div class="todo-body">
-      <!-- task 1 -->
-      <div class="tasks" data-tasks> 
-        <div class="task">
-          <input type="checkbox" id="task-1">
-          <label for="task-1">
-            <span class="custom-checkbox"></span>
-            Batonas
-          </label>
-        </div>
-      <!-- task 2 -->
-        <div class="task">
-          <input type="checkbox" id="task-2">
-          <label for="task-2">
-            <span class="custom-checkbox"></span>
-            Pienas
-          </label>
-        </div>
-      <!-- task 3 -->
-        <div class="task">
-          <input type="checkbox" id="task-3">
-          <label for="task-3">
-            <span class="custom-checkbox"></span>
-            Silke
-          </label>
-        </div>
-      </div>
+      <div class="tasks" data-tasks></div>
 
       <div class="new-task-creator">
         <form action="" data-new-task-form>

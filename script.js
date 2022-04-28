@@ -101,7 +101,6 @@ function render() {
   clearElement(listsContainer)
   renderLists()
   const selectedList = lists.find(list => list.id === selectedListId)
-
   // Hide list container if no list is selected
   if (selectedListId == null) {
     listDisplayContainer.style.display = 'none'
@@ -151,7 +150,7 @@ function renderLists() {
 
 // clearing the list
 function clearElement(element) {
-  while(element.firstChild) {
+  while (element.firstChild) {
     element.removeChild(element.firstChild)
   }
 }
