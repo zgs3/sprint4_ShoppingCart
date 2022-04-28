@@ -29,15 +29,15 @@
     </form>
   </div>
 
-  <div class="todo-list">
+  <div class="todo-list" data-list-display-container>
     <div class="todo-header">
-      <h2 class="list-title">Shopping</h2>
-      <p class="task-count">3 tasks remaining</p>
+      <h2 class="list-title" data-list-title>Shopping</h2>
+      <p class="task-count" data-list-count>3 tasks remaining</p>
     </div>
 
     <div class="todo-body">
       <!-- task 1 -->
-      <div class="tasks"> 
+      <div class="tasks" data-tasks> 
         <div class="task">
           <input type="checkbox" id="task-1">
           <label for="task-1">
@@ -45,9 +45,7 @@
             Batonas
           </label>
         </div>
-      </div>
       <!-- task 2 -->
-      <div class="tasks"> 
         <div class="task">
           <input type="checkbox" id="task-2">
           <label for="task-2">
@@ -55,9 +53,7 @@
             Pienas
           </label>
         </div>
-      </div>
       <!-- task 3 -->
-      <div class="tasks"> 
         <div class="task">
           <input type="checkbox" id="task-3">
           <label for="task-3">
@@ -66,7 +62,6 @@
           </label>
         </div>
       </div>
-
 
       <div class="new-task-creator">
         <form action="">
@@ -81,5 +76,14 @@
       </div>
     </div>
   </div>
+
+  <template id="task-template">
+    <div class="task">
+      <input type="checkbox" id="task-1">
+      <label for="task-1">
+        <span class="custom-checkbox"></span>
+      </label>
+    </div>
+  </template>
 </body>
 </html>

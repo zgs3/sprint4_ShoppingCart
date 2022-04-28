@@ -3,6 +3,14 @@ const newListForm = document.querySelector('[data-new-list-form')
 const newListInput = document.querySelector('[data-new-list-input')
 const deleteListButton = document.querySelector('[data-delete-list-button]')
 
+const listDisplayContainer = document.querySelector('[data-list-display-container]')
+const listTitleElement = document.querySelector('[data-list-title]')
+const listCountElement = document.querySelector('[data-list-count]')
+const tasksContainer = document.querySelector('[data-tasks]')
+const taskTemplate = document.getElementById('task-template')
+
+
+
 // local storage key's
 const LOCAL_STORAGE_LIST_KEY = 'task.lists'
 const LOCAL_STORAGE_SELECTED_LIST_ID_KEY = 'task.selectedListId'
@@ -38,7 +46,11 @@ newListForm.addEventListener('submit', e => {
 
 // function for creating a list item and returning unique id for the item as a date
 function createList(name) {
-  return { id: Date.now().toString(), name: name, tasks: []}
+  return { id: Date.now().toString(), name: name, tasks: [{
+    id: '1',
+    name: 'someName',
+    complete: false
+  }]}
 }
 
 function saveAndRender() {
@@ -54,12 +66,49 @@ function save() {
 
 function render() {
   clearElement(listsContainer)
+  renderLists()
+  const selectedList = lists.find(list => list.id === selectedListId)
+
+  // Hide list container if no list is selected
+  if (selectedListId == null) {
+    listDisplayContainer.style.display = 'none'
+  } else {
+    listDisplayContainer.style.display = ''
+    listTitleElement.innerText = selectedList.name
+    renderTaskCount(selectedList)
+    // clearing list items
+    clearElement(tasksContainer)
+    // loading list items
+    renderTasks(selectedList)
+  }
+}
+
+function renderTasks(selectedList) {
+  selectedList.tasks.forEach(task => { // function loading task div template
+    const taskElement = document.importNode(taskTemplate.content, true)
+    const checkbox = taskElement.querySelector('input')
+    checkbox.id = task.id
+    checkbox.checked = task.complete
+    const label = taskElement.querySelector('label')
+    label.htmlFor = task.id
+    label.append(task.name)
+    tasksContainer.appendChild(taskElement)
+  })
+}
+
+// function for counting unfinished tasks/items
+function renderTaskCount(selectedList) {
+  const incompleteTaskCount = selectedList.tasks.filter(task => !task.complete).length
+    const taskString = incompleteTaskCount === 1 ? 'task' : 'tasks'
+    listCountElement.innerText = `${incompleteTaskCount} ${taskString} remaining`
+}
+
+function renderLists() {
   lists.forEach(list => {
     const listElement = document.createElement('li')
     listElement.dataset.listId = list.id // identifying which item is clicked on by id
     listElement.classList.add('list-name')
     listElement.innerText = list.name
-
     if (list.id === selectedListId) {
       listElement.classList.add('active-list')
     }
