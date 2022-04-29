@@ -1,7 +1,6 @@
 # Sprint 4 - Shopping list app
 
-* Project which I've done for a Sprint 4 task while studying at BIT. 
-* 
+* Project which I've done for a Sprint 4 task while studying at Baltic Institute of Technology. 
 * Development progress was tracked by submiting commits using Git CLI.
 
 
@@ -14,7 +13,9 @@
 
 ## How to use the app?
 
-* First, you need to create your first list: 
+
+First, you need to create your first list: 
+
 
 1. Locate the input field "new list" nearly at the center of the page.
 2. Enter any list name like "Shopping list" and press "Enter" or "+" button on the left of the input field. Feel free to create more lists.
