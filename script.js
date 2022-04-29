@@ -1,15 +1,12 @@
 const listsContainer = document.querySelector('[data-lists]')
 const newListForm = document.querySelector('[data-new-list-form')
 const newListInput = document.querySelector('[data-new-list-input')
-
 const deleteListButton = document.querySelector('[data-delete-list-button]')
-
 const listDisplayContainer = document.querySelector('[data-list-display-container]')
 const listTitleElement = document.querySelector('[data-list-title]')
 const listCountElement = document.querySelector('[data-list-count]')
 const tasksContainer = document.querySelector('[data-tasks]')
 const taskTemplate = document.getElementById('task-template')
-
 const newTaskForm = document.querySelector('[data-new-task-form]')
 const newTaskInput = document.querySelector('[data-new-task-input]')
 const clearCompleteTasksButton = document.querySelector('[data-clear-complete-tasks-button]')
@@ -24,11 +21,16 @@ let lists = JSON.parse(localStorage.getItem(LOCAL_STORAGE_LIST_KEY)) || []
 // getting selected item ID from LS
 let selectedListId = localStorage.getItem(LOCAL_STORAGE_SELECTED_LIST_ID_KEY)
 
+
 // edit function after double clicking the item
 tasksContainer.addEventListener('dblclick', e => {
+  const selectedList = lists.find(list => list.id === selectedListId)
+  const selectedTaskId = e.target.getAttributeNode('for').value
+  const selectedTask = selectedList.tasks.find(task => task.id === selectedTaskId)
   const newValue = prompt('Enter updated item:')
   if (newValue == null || newValue === '') return 
   e.target.innerHTML = '<span class="custom-checkbox"></span>' + newValue
+  selectedTask.name = newValue
   save()
 })
 
